@@ -1,16 +1,22 @@
-function AsyncRequest() {
-    this.loaded = false
+function SpyTestClass() {
+    this.parameter = 'Jasmine spies'
 }
-AsyncRequest.prototype.get = function () {
-    return new Promise(function (resolve, reject) {
-        setTimeout(function () {
-            resolve('resolved promise');
-        }, 3000);
-    })
+SpyTestClass.prototype.SpySyncFunction = function () {
+    return this.parameter;
 }
 
-var test = new AsyncRequest();
-var p = test.get();
-p.then(function (data) {
-    console.log(data)
-});
+SpyTestClass.prototype.AsyncResolveFunction = function () {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            resolve('Asyn jasmine spies');
+        }, 300);
+    })
+};
+
+SpyTestClass.prototype.AsyncRejectFunction = function () {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            reject('Asyn jasmine spies Reject');
+        }, 300);
+    })
+};
