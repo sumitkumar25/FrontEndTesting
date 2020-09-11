@@ -1,6 +1,4 @@
-# FrontEndTesting
-
-FrontEndTesting jasmine
+# Jasmine API and Angular Testing Utils
 
 ## Setup
 
